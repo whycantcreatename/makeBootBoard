@@ -65,7 +65,7 @@ public class BoardController {
 		return "redirect:/board/list";
 	}
 	
-	@PostMapping("board/view.action")
+	@PostMapping("board/view/action")
 	public String boardViewAction(Model model, BoardRequestDto boardRequestDto) throws Exception {
 		
 		try {
@@ -82,7 +82,7 @@ public class BoardController {
 	}
 	
 
-	@PostMapping("board/view.delete")
+	@PostMapping("board/view/delete")
 	public String boardViewDeleteAction(Model model, @RequestParam() Long id) throws Exception {
 		
 		try {

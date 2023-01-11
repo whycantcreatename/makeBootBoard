@@ -12,16 +12,21 @@ import org.springframework.security.core.userdetails.UserDetails;
 import com.board.bootBoard.entity.BaseTimeEntity;
 
 import javax.persistence.Id;
+
 import lombok.AccessLevel;
 import lombok.Builder;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
 
-@EqualsAndHashCode(of= {"id"}) // equals, hashCode 자동 생성
+@EqualsAndHashCode(of= {"id"}, callSuper=false) // equals, hashCode 자동 생성
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Getter
+@Setter
 @Entity
+@ToString
 public class Member extends BaseTimeEntity implements UserDetails {
 	
 	private static final long serialVersionUID = 1L;
@@ -32,8 +37,8 @@ public class Member extends BaseTimeEntity implements UserDetails {
 	private String email;
 	private String pwd;
 	private LocalDateTime lastLoginTime;
-	
-    @Builder
+
+	@Builder
 	public Member(Long id, String email, String pwd, LocalDateTime lastLoginTime) {
 		super();
 		this.id = id;

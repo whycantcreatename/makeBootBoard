@@ -21,7 +21,7 @@ public class AuthFailureHandler extends SimpleUrlAuthenticationFailureHandler {
 	
 	    // exception 관련 메세지 처리
 	    if (exception instanceof DisabledException) {
-        	msg = "DisabledException account";
+	    	msg = "DisabledException account";
         } else if(exception instanceof CredentialsExpiredException) {
         	msg = "CredentialsExpiredException account";
         } else if(exception instanceof BadCredentialsException ) {
